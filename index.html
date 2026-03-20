@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz Platform Login Register</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card" aria-labelledby="auth-heading">
+      <h1 id="auth-heading" class="brand">Quiz Platform</h1>
+
+      <div class="toggle" role="tablist" aria-label="Authentication forms">
+        <button id="tab-login" class="tab active" role="tab" aria-selected="true" aria-controls="login-panel">Log In</button>
+        <button id="tab-register" class="tab" role="tab" aria-selected="false" aria-controls="register-panel">Register</button>
+      </div>
+
+      <div class="panels">
+        <!-- Login Form -->
+        <form id="login-panel" class="panel active" aria-hidden="false" novalidate>
+          <p class="panel-intro">Welcome back — please sign in.</p>
+
+          <label class="field">
+            <span class="label-text">Email</span>
+            <input type="email" name="email" id="login-email" required autocomplete="username" />
+          </label>
+
+          <label class="field">
+            <span class="label-text">Password</span>
+            <input type="password" name="password" id="login-password" required autocomplete="current-password" />
+          </label>
+
+          <fieldset class="field role-field">
+            <legend class="label-text">Role</legend>
+            <label class="radio">
+              <input type="radio" name="role" value="student" checked />
+              <span>Student</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="role" value="admin" />
+              <span>Admin</span>
+            </label>
+          </fieldset>
+
+          <button type="submit" class="btn primary">Log In</button>
+          <p class="muted">New here? <button type="button" class="link-btn" id="to-register">Create an account</button></p>
+        </form>
+
+        <!-- Register Form -->
+        <form id="register-panel" class="panel" aria-hidden="true" novalidate>
+          <p class="panel-intro">Create your account to start building quizzes.</p>
+
+          <label class="field">
+            <span class="label-text">Email</span>
+            <input type="email" name="email" id="register-email" required autocomplete="email" />
+          </label>
+
+          <label class="field">
+            <span class="label-text">Password</span>
+            <input type="password" name="password" id="register-password" required autocomplete="new-password" />
+          </label>
+
+          <fieldset class="field role-field">
+            <legend class="label-text">Role</legend>
+            <label class="radio">
+              <input type="radio" name="role" value="student" checked />
+              <span>Student</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="role" value="admin" />
+              <span>Admin</span>
+            </label>
+          </fieldset>
+
+          <button type="submit" class="btn primary">Register</button>
+          <p class="muted">Already have an account? <button type="button" class="link-btn" id="to-login">Sign in</button></p>
+        </form>
+      </div>
+
+      <footer class="card-footer">
+        <small class="muted">By continuing you agree to our Terms and Privacy.</small>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
