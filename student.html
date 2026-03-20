@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard - Quiz Platform</title>
+  <link rel="stylesheet" href="student.css">
+</head>
+<body>
+  <div class="student-dashboard">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <h1 class="logo">Quiz Platform</h1>
+      <ul>
+        <li><a href="#">Quizzes</a></li>
+        <li><a href="#">Quiz History</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </nav>
+
+    <!-- Quiz Grid -->
+    <section id="quizGrid" class="quiz-grid">
+      <div class="quiz-card" data-duration="73" data-title="Introduction to Socket" data-questions="50" data-type="MCQ">
+        <h2>Introduction to Socket</h2>
+        <p class="muted">Based on SLIIT Year 2 Semester 2 (2026) Network Programming Lecture 1 slides</p>
+        <div class="quiz-meta">
+          <div><strong>73</strong> minutes</div>
+          <div><strong>50</strong> Questions</div>
+          <div><strong>MCQ</strong> Type</div>
+        </div>
+        <button class="btn primary start-btn">Start Quiz</button>
+      </div>
+      <!-- Add more quiz cards here -->
+    </section>
+
+    <!-- Quiz Interface -->
+    <section id="quizInterface" class="quiz-interface hidden">
+      <header class="quiz-header">
+        <h2 id="quizTitle">Quiz Title</h2>
+        <div id="timer" class="timer">00:00</div>
+      </header>
+      <form id="quizForm">
+        <div id="questionsContainer"></div>
+        <button type="submit" class="btn primary">Submit Quiz</button>
+      </form>
+    </section>
+    
+    
+
+
+    <!-- Results Section -->
+    <section id="resultsSection" class="results hidden">
+      <h2>Quiz Results</h2>
+      <div id="resultsContent"></div>
+      <button id="backToQuizzes" class="btn">Back to Quizzes</button>
+    </section>
+  </div>
+     <!-- Results Section -->
+     <section id="resultsSection" class="results hidden">
+      <h2>Quiz Complete!</h2>
+      <div id="scoreDisplay" class="score-display"></div>
+      <div id="summaryStats" class="summary-stats"></div>
+      <canvas id="resultsChart" width="300" height="150"></canvas>
+      <div class="results-actions">
+    <button id="backToQuizzes" class="btn">Back to Quizzes</button>
+    <button id="retakeQuiz" class="btn primary">Retake Quiz</button>
+  </div>
+    </section>
+
+  
+
+  <script src="student.js"></script>
+</body>
+</html>
