@@ -1,0 +1,162 @@
+:root {
+  --bg: #0f172a;
+  --sidebar-bg: #071029;
+  --card-bg: rgba(255, 255, 255, 0.06); /* translucent glass */
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 10px 30px rgba(2,6,23,0.6);
+  --accent: #5cc8ff;
+  --accent-2: #8b5cf6;
+  --text: rgba(255,255,255,0.95);
+  --muted: rgba(255,255,255,0.65);
+  --blur: 20px;
+  --radius: 16px;
+}
+
+/* Background with soft animated blobs */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(1200px 600px at 10% 20%, rgba(139,92,246,0.12), transparent 8%),
+              radial-gradient(1000px 500px at 90% 80%, rgba(92,200,255,0.08), transparent 8%),
+              linear-gradient(135deg, #1e0e7b, #1a1a1a);
+  color: var(--text);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Dashboard glass container */
+.dashboard {
+  display: flex;
+  width: 100%;
+  backdrop-filter: blur(var(--blur)) saturate(120%);
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(120%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, var(--card-bg), var(--glass-3));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--blur)) saturate(120%);
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(120%);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+.sidebar .logo {
+  margin: 0 0 20px;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+.sidebar nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 200ms ease;
+}
+.sidebar nav a:hover {
+  color: var(--accent);
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Cards */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius);
+  padding: 60px;
+  margin-bottom: 20px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--blur)) saturate(120%);
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(120%);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+.card::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background: linear-gradient(120deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 30%, transparent 60%);
+  mix-blend-mode:overlay;
+  pointer-events:none;
+}
+.card h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color: var(--text);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+input:focus {
+  outline: none;
+  border-color: rgba(92,200,255,0.9);
+  box-shadow: 0 8px 30px rgba(92,200,255,0.06);
+  transform: translateY(-1px);
+}
+
+/* Buttons */
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #021026;
+  box-shadow: 0 12px 30px rgba(92,200,255,0.12);
+}
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Questions */
+.question {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 60px;
+  margin-top: 15px;
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+.question::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background: linear-gradient(120deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 30%, transparent 60%);
+  mix-blend-mode:overlay;
+  pointer-events:none;
+}
+.question h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  color: var(--accent);
+}
+.option {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  color: var(--muted);
+}
